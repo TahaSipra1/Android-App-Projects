@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/signnin"
+    tools:context=".signinActivity">
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="300dp"
+        app:hintEnabled="false"
+        app:hintTextColor="@color/yellow">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etusernameet"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:hint="Enter your username"
+            android:textStyle="normal"
+            android:inputType="text"
+            app:hintTextColor="@color/yellow" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnsignin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/yellow"
+        android:text="Sign in"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+</LinearLayout>
