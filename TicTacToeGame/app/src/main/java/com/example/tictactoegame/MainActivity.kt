@@ -25,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun createOfflienGame(){
+        GameData.saveGameModel(
+            GameModel(
+                gameStatus = GameStatus.JOINED
+            )
+        )
         startGame()
 
     }
