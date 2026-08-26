@@ -22,6 +22,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        GameData.fetchGameModel()
         binding.btn0.setOnClickListener (this)
         binding.btn1.setOnClickListener (this)
         binding.btn2.setOnClickListener (this)
@@ -71,11 +72,21 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
                     GameStatus.IMPROGRESS ->{
                         binding.btnStartGame.visibility= View.INVISIBLE
-                        currentPlayer +" turn"
+                        when(GameData.myID){
+                            currentPlayer -> "your Turn"
+                            else -> currentPlayer +" turn"
+                        }
+
                     }
 
                     GameStatus.FINISHED->{
-                        if(winner.isNotEmpty())winner+" win "
+                        if(winner.isNotEmpty()){
+                            when(GameData.myID){
+                                winner ->"You Won "
+                                else -> winner+" win "
+                            }
+
+                        }
                         else "DRAW"
                     }
 
@@ -135,6 +146,9 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
                 return
             }
             //Game is in progress
+            Toast.makeText(applicationContext," Not Your Turn", Toast.LENGTH_SHORT).show()
+            return
+            if(gameId!="-1" && currentPlayer!= GameData.myID)
             val clickPos=(v?.tag as String).toInt()
             if(filledPos[clickPos].isEmpty()){
                 filledPos[clickPos]=currentPlayer

@@ -19,5 +19,18 @@ object GameData {
         }
     }
 
+    fun fetchGameModel(){
+        gameModel.value?.apply {
+            if(gameId!="-1"){
+                Firebase.firestore.collection("games")
+                    .document(gameId)
+                    .addSnapshotListener { value, error ->
+                        val model=value?.toObject(GameModel::class.java)
+                        _gameModel.postValue(model)
+                    }
+            }
+        }
+    }
+
 
 }
