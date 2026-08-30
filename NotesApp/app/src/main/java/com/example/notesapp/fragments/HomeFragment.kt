@@ -114,7 +114,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
 
         val menuSearch=menu.findItem(R.id.searchMenu).actionView as SearchView
         menuSearch.isSubmitButtonEnabled=false
-        menuSearch.setOnQueryTextListener(true)
+        menuSearch.setOnQueryTextListener(this)
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
