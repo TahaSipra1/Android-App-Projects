@@ -31,6 +31,8 @@
         android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/loctaion"
         android:drawablePadding="15dp"
+        android:fontFamily="@font/merriweathersans_medium"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +54,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/merriweathersans_bold"
         android:text="Today"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
@@ -62,7 +66,9 @@
         android:id="@+id/Temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweathersans_bold"
         android:text="00:00 °C"
+        android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -73,8 +79,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/merriweathersans_regular"
         android:text="Sunny"
         android:textAllCaps="true"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +92,10 @@
         android:id="@+id/MaxTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweathersans_regular"
         android:text="Max: 00:00°C"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +105,9 @@
         android:id="@+id/MinTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweathersans_regular"
         android:text="Min: 00:00°C"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/MaxTemp"
         app:layout_constraintStart_toStartOf="@+id/MaxTemp"
@@ -105,7 +118,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/merriweathersans_bold"
         android:text="Tuesday"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/MinTemp"
         app:layout_constraintStart_toStartOf="@+id/MinTemp"
@@ -116,7 +131,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/merriweathersans_regular"
         android:text="1 September  2026"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/Day"
         app:layout_constraintStart_toStartOf="@+id/Day"
         app:layout_constraintTop_toBottomOf="@+id/Day" />
@@ -124,7 +141,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="250dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -170,16 +187,18 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="00%"
-                    android:textColor="#000" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="Humidity"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -200,16 +219,18 @@
                     android:id="@+id/tvwindSpeed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="0:00 m/s"
-                    android:textColor="#000" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="Wind Speed"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -230,17 +251,19 @@
                     android:id="@+id/tvcondition"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="Sunny"
                     android:textAllCaps="true"
-                    android:textColor="#000" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="Condition"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -261,16 +284,18 @@
                     android:id="@+id/tvsunrise"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="00:00"
-                    android:textColor="#000" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="Sunrise"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -291,16 +316,18 @@
                     android:id="@+id/tvsunset"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="00:00"
-                    android:textColor="#000" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="Sunset"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -321,16 +348,18 @@
                     android:id="@+id/tvsea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="0000hpa"
-                    android:textColor="#000" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
                     android:gravity="center"
                     android:text="sea"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
 

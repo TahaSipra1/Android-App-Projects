@@ -40,4 +40,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     //  lottie animations
     implementation("com.airbnb.android:lottie:6.1.0")
+    // GSON converter
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+// retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
 }
