@@ -54,7 +54,7 @@
                 android:layout_weight="0.5"
                 android:gravity="center">
                 <TextView
-                    android:id="@+id/tvbudget"
+                    android:id="@+id/budget"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$400"
@@ -109,7 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/RecyclerView_Tittle"
-        android:layout_marginTop="10dp" />
+        android:layout_margin="10dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
