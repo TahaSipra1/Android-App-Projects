@@ -1,5 +1,6 @@
 package com.example.budgettrackerapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
 
         )
+        val addBtn=findViewById<FloatingActionButton>(R.id.addBtn)
 
         transactionAdapter= TransactionAdapter(transactions)
         LinearLayoutManager= LinearLayoutManager(this)
@@ -46,7 +49,13 @@ class MainActivity : AppCompatActivity() {
             adapter=transactionAdapter
             layoutManager=LinearLayoutManager
         }
+
         updateDashBoard()
+
+        addBtn.setOnClickListener {
+            val intent= Intent(this, AddTransactionActivity::class.java)
+            startActivity(intent)
+        }
     }
     private fun updateDashBoard(){
         val totalAmount=transactions.map { it.amount }.sum()

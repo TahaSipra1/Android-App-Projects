@@ -12,9 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BudgetTrackerApp">
         <activity
+            android:name=".AddTransactionActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
