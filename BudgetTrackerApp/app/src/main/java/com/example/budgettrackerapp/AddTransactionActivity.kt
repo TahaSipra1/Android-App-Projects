@@ -8,8 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.room.Room
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class AddTransactionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,19 +48,32 @@ class AddTransactionActivity : AppCompatActivity() {
         }
         addTransactionBtn.setOnClickListener {
             val label=labelInput.text.toString()
-            val ammount=amountInput.text.toString().toDoubleOrNull()
+            val amount=amountInput.text.toString().toDoubleOrNull()
+            val description=descriptionInput.text.toString()
 
             if(label.isEmpty()){
                 labelLayout.error="Please Enter a valid Label"
             }
-            if (ammount==null){
+            else if(amount==null){
                 amountLayout.error="Please Enter a valid Amount"
+            }
+            else{
+                val transaction= Transaction(0,label,amount,description)
+                insert(transaction)
             }
 
         }
         closeBtn.setOnClickListener {
             finish()
         }
+    }
+    private fun insert(transaction: Transaction){
+        val db= Room.databaseBuilder(this,
+            AppDatebase::class.java,"transactions").build()
+
+        GlobalScope.launch {
+            db.transactionDao().insertAll(transaction)
+            finish()        }
     }
 
 }

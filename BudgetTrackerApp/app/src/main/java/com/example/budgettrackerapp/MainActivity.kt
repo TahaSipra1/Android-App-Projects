@@ -9,14 +9,18 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recycleview: RecyclerView
-    private lateinit var transactions: ArrayList<Transaction>
+    private lateinit var transactions: List<Transaction>
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var LinearLayoutManager: LinearLayoutManager
+    private lateinit var db: AppDatebase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,21 +31,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        transactions=arrayListOf(
-            Transaction("weekend budget",400.00),
-            Transaction("Bananas",-4.00),
-            Transaction("Gasolinet",-40.90),
-            Transaction("Breakfast",-9.99),
-            Transaction("water bottles",-4.00),
-            Transaction("sncream",-8.00),
-            Transaction("car Park",-15.00),
+        transactions=arrayListOf()
 
-
-        )
         val addBtn=findViewById<FloatingActionButton>(R.id.addBtn)
 
         transactionAdapter= TransactionAdapter(transactions)
         LinearLayoutManager= LinearLayoutManager(this)
+
+        db= Room.databaseBuilder(this,
+            AppDatebase::class.java,"transactions").build()
 
         recycleview=findViewById(R.id.RecyclerView)
 
@@ -50,12 +48,23 @@ class MainActivity : AppCompatActivity() {
             layoutManager=LinearLayoutManager
         }
 
-        updateDashBoard()
-
+       
         addBtn.setOnClickListener {
             val intent= Intent(this, AddTransactionActivity::class.java)
             startActivity(intent)
         }
+    }
+    private fun fetchAll(){
+        GlobalScope.launch {
+
+            transactions=db.transactionDao().getAll()
+
+            runOnUiThread {
+                updateDashBoard()
+                transactionAdapter.setData(transactions)
+            }
+        }
+
     }
     private fun updateDashBoard(){
         val totalAmount=transactions.map { it.amount }.sum()
@@ -68,10 +77,10 @@ class MainActivity : AppCompatActivity() {
         balance.text="$ %.2f".format(totalAmount)
         budget.text="$ %.2f".format(budgetAmount)
         expenses.text="$ %.2f".format(expenseAmount)
+    }
 
-
-
-
-
+    override fun onResume() {
+        super.onResume()
+        fetchAll()
     }
 }
