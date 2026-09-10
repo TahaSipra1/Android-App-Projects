@@ -1,6 +1,7 @@
 package com.example.budgettrackerapp
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,7 @@ class TransactionAdapter(private var transactions: List<Transaction>):
         val transaction: Transaction=transactions[position]
         val context: Context=holder.amount.context
         if(transaction.amount>=0){
-            holder.amount.text=String.format("- $%.2f",transaction.amount)
+            holder.amount.text=String.format("+ $%.2f",transaction.amount)
             holder.amount.setTextColor(ContextCompat.getColor(context,R.color.green))
         }
         else{
@@ -31,6 +32,12 @@ class TransactionAdapter(private var transactions: List<Transaction>):
             holder.amount.setTextColor(ContextCompat.getColor(context,R.color.red))
         }
         holder.label.text=transaction.label
+
+        holder.itemView.setOnClickListener {
+            val intent= Intent(context, DetailedActivity::class.java)
+            intent.putExtra("transaction",transaction)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
