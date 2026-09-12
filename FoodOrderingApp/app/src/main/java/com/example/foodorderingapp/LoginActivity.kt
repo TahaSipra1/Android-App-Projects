@@ -6,24 +6,27 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.foodorderingapp.databinding.ActivityStartBinding
+import com.example.foodorderingapp.databinding.ActivityLoginBinding
 
-class StartActivity : AppCompatActivity() {
-    lateinit var binding: ActivityStartBinding
+class LoginActivity : AppCompatActivity() {
+    lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding= ActivityStartBinding.inflate(layoutInflater)
+        binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.nextBtn.setOnClickListener {
-            val intent= Intent(this, LoginActivity::class.java)
+        binding.loginBtn.setOnClickListener {
+            val intent= Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
-
+        binding.DontHaveAccBtn.setOnClickListener {
+            val intent= Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
