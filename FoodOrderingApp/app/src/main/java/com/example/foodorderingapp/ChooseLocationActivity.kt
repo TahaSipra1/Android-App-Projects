@@ -1,32 +1,28 @@
 package com.example.foodorderingapp
 
-import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.foodorderingapp.databinding.ActivityLoginBinding
+import com.example.foodorderingapp.databinding.ActivityChooseLocationBinding
 
-class LoginActivity : AppCompatActivity() {
-    lateinit var binding: ActivityLoginBinding
+class ChooseLocationActivity : AppCompatActivity() {
+    lateinit var binding: ActivityChooseLocationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding= ActivityLoginBinding.inflate(layoutInflater)
+        binding= ActivityChooseLocationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.loginBtn.setOnClickListener {
-            val intent= Intent(this, ChooseLocationActivity::class.java)
-            startActivity(intent)
-        }
-        binding.DontHaveAccBtn.setOnClickListener {
-            val intent= Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
+        val locationList=arrayOf("Gujrat","Lahore","Islamabad","Gujrawala")
+        val adapter= ArrayAdapter(this,android.R.layout.simple_list_item_1,locationList)
+        val autoCompleteTextView=binding.listofLocation
+        autoCompleteTextView.setAdapter(adapter)
     }
 }
