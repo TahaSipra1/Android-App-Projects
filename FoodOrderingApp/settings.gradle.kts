@@ -19,9 +19,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") } // FIX 1: kts needs uri("") and =
     }
 }
 
-rootProject.name = "Food Ordering App"
+rootProject.name = "FoodOrderingApp" // FIX 2: Remove spaces
 include(":app")
- 
