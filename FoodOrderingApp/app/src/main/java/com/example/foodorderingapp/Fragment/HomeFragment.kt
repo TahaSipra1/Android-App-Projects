@@ -1,11 +1,14 @@
 package com.example.foodorderingapp.Fragment
 
+import android.icu.text.Transliterator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.foodorderingapp.R
 import com.example.foodorderingapp.databinding.FragmentHomeBinding
@@ -39,6 +42,17 @@ class HomeFragment : Fragment() {
         val imageslider=binding.imageSlider
         imageslider.setImageList(imageList)
         imageslider.setImageList(imageList, ScaleTypes.FIT)
+        imageslider.setItemClickListener(object : ItemClickListener{
+            override fun doubleClick(position: Int) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onItemSelected(position: Int) {
+                val itemPosition=imageList[position]
+                val itemMessage="Selected Image ${position+1}"
+                Toast.makeText(requireContext(),itemMessage,Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
 

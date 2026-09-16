@@ -3,8 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="textColor">#1FC57A</color>
-    <color name="startColor">#FF8A00</color>
-    <color name="endColor">#FF5722</color>
+    <color name="startColor">##1FC57A</color>
+    <color name="endColor">##1FC57A</color>
     <color name="iconColor">#000000</color>
 
 </resources>
