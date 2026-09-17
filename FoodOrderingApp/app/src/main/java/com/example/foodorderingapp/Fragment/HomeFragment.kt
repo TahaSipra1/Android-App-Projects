@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.foodorderingapp.R
+import com.example.foodorderingapp.adapter.PopularAdapter
 import com.example.foodorderingapp.databinding.FragmentHomeBinding
 
 
@@ -44,7 +46,11 @@ class HomeFragment : Fragment() {
         imageslider.setImageList(imageList, ScaleTypes.FIT)
         imageslider.setItemClickListener(object : ItemClickListener{
             override fun doubleClick(position: Int) {
-                TODO("Not yet implemented")
+                Toast.makeText(
+                    requireContext(),
+                    "Double Clicked Image ${position + 1}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             override fun onItemSelected(position: Int) {
@@ -53,6 +59,17 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(),itemMessage,Toast.LENGTH_SHORT).show()
             }
         })
+        val foodName=listOf("Burger","sandwich","momo","item")
+        val Price=listOf("$5","$7","$8","10")
+        val popularFoodImages=listOf(
+            R.drawable.menu1,
+            R.drawable.menu2,
+            R.drawable.menu3,
+            R.drawable.menu4
+        )
+        val adapter= PopularAdapter(foodName,Price,popularFoodImages)
+        binding.popularRecyclerView.layoutManager= LinearLayoutManager(requireContext())
+        binding.popularRecyclerView.adapter=adapter
     }
 
 
