@@ -20,6 +20,7 @@
             android:fontFamily="@font/merriweathersans_regular"
             android:text="Recent Buy"
             android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +41,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/BuyAgainFoodImage"
                     android:layout_width="62dp"
                     android:layout_height="62dp"
                     android:layout_marginStart="8dp"
@@ -52,31 +53,33 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/buyAgainFoodName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/merriweathersans_regular"
                     android:text="FoodName"
                     android:textColor="@color/black"
-                    app:layout_constraintBottom_toTopOf="@+id/textView27"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/BuyAgainFoodPrice"
+                    app:layout_constraintStart_toEndOf="@+id/BuyAgainFoodImage"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/BuyAgainFoodPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/merriweathersans_regular"
                     android:text="$5"
                     android:textColor="@color/textColor"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView26"
+                    app:layout_constraintEnd_toEndOf="@+id/buyAgainFoodName"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="@+id/textView26"
-                    app:layout_constraintTop_toBottomOf="@+id/textView26" />
+                    app:layout_constraintStart_toStartOf="@+id/buyAgainFoodName"
+                    app:layout_constraintTop_toBottomOf="@+id/buyAgainFoodName" />
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/OrderStatus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginEnd="32dp"
@@ -97,13 +100,16 @@
             android:fontFamily="@font/merriweathersans_regular"
             android:text="Recent Buy"
             android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/cardView2"
             tools:layout_editor_absoluteX="49dp" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/BuyAgainRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
+            tools:listitem="@layout/buy_again_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
