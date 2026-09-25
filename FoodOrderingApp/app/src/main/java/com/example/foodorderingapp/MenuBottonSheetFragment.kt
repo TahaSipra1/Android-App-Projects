@@ -28,8 +28,12 @@ class MenuBottonSheetFragment : BottomSheetDialogFragment() {
     ): View? {
        binding= FragmentMenuBottonSheetBinding.inflate(inflater,container,false)
 
-        var menuFoodName=listOf("Burger","sandwich","mamo","item","sandwich","momo")
-        val menuItemPrice=listOf("$5","$6","$7","$8","$9","$10")
+        binding.buttonBack.setOnClickListener {
+            dismiss()
+        }
+
+        var menuFoodName=listOf("Burger","sandwich","mamo","item","sandwich","momo","mamo","item","sandwich","momo")
+        val menuItemPrice=listOf("$5","$6","$7","$8","$9","$10","$7","$8","$9","$10")
         val menuImage=listOf(
             R.drawable.menu1,
             R.drawable.menu2,
@@ -37,6 +41,10 @@ class MenuBottonSheetFragment : BottomSheetDialogFragment() {
             R.drawable.menu4,
             R.drawable.menu5,
             R.drawable.menu6,
+            R.drawable.menu3,
+            R.drawable.menu4,
+            R.drawable.menu5,
+            R.drawable.menu6
         )
         val adapter= MenuAdapter(ArrayList(menuFoodName),
             ArrayList(menuItemPrice), ArrayList(menuImage)
