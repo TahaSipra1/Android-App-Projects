@@ -201,16 +201,18 @@
                 android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/PlaceMyOrder"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="Pace My Order"
-        android:textColor="@color/textColor"
-        android:textAllCaps="false"
+        android:layout_gravity="bottom"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/edittextshape"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/edittextshape"
         android:fontFamily="@font/merriweathersans_regular"
-        android:layout_gravity="bottom"/>
+        android:text="Pace My Order"
+        android:textAllCaps="false"
+        android:textColor="@color/textColor" />
 </FrameLayout>
