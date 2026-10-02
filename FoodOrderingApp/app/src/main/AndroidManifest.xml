@@ -24,7 +24,7 @@
         <activity
             android:name=".SplashScreen"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".StartActivity"
             android:exported="false"
@@ -43,6 +43,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".PayOutActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DetailsActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
