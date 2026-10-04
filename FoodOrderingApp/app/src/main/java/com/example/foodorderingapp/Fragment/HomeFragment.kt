@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
             R.drawable.menu3,
             R.drawable.menu4
         )
-        val adapter= PopularAdapter(foodName,Price,popularFoodImages)
+        val adapter= PopularAdapter(foodName,Price,popularFoodImages,requireContext())
         binding.popularRecyclerView.layoutManager= LinearLayoutManager(requireContext())
         binding.popularRecyclerView.adapter=adapter
     }

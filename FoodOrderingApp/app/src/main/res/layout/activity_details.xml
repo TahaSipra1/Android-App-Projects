@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Food Name"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
@@ -55,6 +56,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Short Description"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
@@ -75,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Ingredients"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="@+id/descriptionTextView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/descriptionTextView"
@@ -90,4 +93,20 @@
         app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/white"
+        android:background="@drawable/addtocartshape"
+        android:text="Add To Cart"
+        android:textStyle="bold"
+        android:fontFamily="@font/merriweathersans_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingrediantsTextview" />
 </androidx.constraintlayout.widget.ConstraintLayout>
