@@ -28,15 +28,18 @@ class CartFragment : Fragment() {
     ): View? {
         binding= FragmentCartBinding.inflate(inflater,container,false)
 
-        var cartFoodName=listOf("Burger","sandwich","mamo","item","sandwich","momo")
-        val cartItemPrice=listOf("$5","$6","$7","$8","$9","$10")
+        var cartFoodName=listOf("Burger","Salad","Ice-Cream","Samosa","sandwich","momo","Shawarma","Pasta","Fries")
+        val cartItemPrice=listOf("$5","$6","$7","$8","$9","$10","$7","$8","$9","$10")
         val cartImage=listOf(
-            R.drawable.menu1,
+            R.drawable.burger,
             R.drawable.menu2,
             R.drawable.menu3,
-            R.drawable.menu4,
+            R.drawable.samosa,
+            R.drawable.sandwich,
+            R.drawable.momo,
+            R.drawable.shawarma,
             R.drawable.menu5,
-            R.drawable.menu6,
+            R.drawable.fries
         )
         val adapter= CartAdapter(ArrayList(cartFoodName),
             ArrayList(cartItemPrice), ArrayList(cartImage))

@@ -32,19 +32,18 @@ class MenuBottonSheetFragment : BottomSheetDialogFragment() {
             dismiss()
         }
 
-        var menuFoodName=listOf("Burger","sandwich","mamo","item","sandwich","momo","mamo","item","sandwich","momo")
+        var menuFoodName=listOf("Burger","Salad","Ice-Cream","Samosa","sandwich","momo","Shawarma","Pasta","Fries")
         val menuItemPrice=listOf("$5","$6","$7","$8","$9","$10","$7","$8","$9","$10")
         val menuImage=listOf(
-            R.drawable.menu1,
+            R.drawable.burger,
             R.drawable.menu2,
             R.drawable.menu3,
-            R.drawable.menu4,
+            R.drawable.samosa,
+            R.drawable.sandwich,
+            R.drawable.momo,
+            R.drawable.shawarma,
             R.drawable.menu5,
-            R.drawable.menu6,
-            R.drawable.menu3,
-            R.drawable.menu4,
-            R.drawable.menu5,
-            R.drawable.menu6
+            R.drawable.fries
         )
         val adapter= MenuAdapter(ArrayList(menuFoodName),
             ArrayList(menuItemPrice), ArrayList(menuImage),requireContext()

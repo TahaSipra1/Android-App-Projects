@@ -34,7 +34,7 @@
                 android:fontFamily="@font/merriweathersans_regular"
                 android:text="Name"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -70,7 +70,7 @@
                 android:fontFamily="@font/merriweathersans_regular"
                 android:text="Address"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -109,7 +109,7 @@
                 android:fontFamily="@font/merriweathersans_regular"
                 android:text="Email"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -146,7 +146,7 @@
                 android:fontFamily="@font/merriweathersans_regular"
                 android:text="Phone"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText

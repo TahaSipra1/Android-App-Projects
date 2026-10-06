@@ -64,13 +64,18 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(),itemMessage,Toast.LENGTH_SHORT).show()
             }
         })
-        val foodName=listOf("Burger","sandwich","momo","item")
-        val Price=listOf("$5","$7","$8","10")
+        val foodName=listOf("Burger","Salad","Ice-Cream","Samosa","sandwich","momo","Shawarma","Pasta","Fries")
+        val Price=listOf("$5","$6","$7","$8","$9","$10","$7","$8","$9","$10")
         val popularFoodImages=listOf(
-            R.drawable.menu1,
+            R.drawable.burger,
             R.drawable.menu2,
             R.drawable.menu3,
-            R.drawable.menu4
+            R.drawable.samosa,
+            R.drawable.sandwich,
+            R.drawable.momo,
+            R.drawable.shawarma,
+            R.drawable.menu5,
+            R.drawable.fries
         )
         val adapter= PopularAdapter(foodName,Price,popularFoodImages,requireContext())
         binding.popularRecyclerView.layoutManager= LinearLayoutManager(requireContext())

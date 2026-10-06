@@ -17,19 +17,18 @@ class SearchFragment : Fragment() {
     lateinit var binding: FragmentSearchBinding
     private lateinit var  adapter: MenuAdapter
 
-    private val originalFoodName=listOf("Burger","sandwich","mamo","item","sandwich","momo","mamo","item","sandwich","momo")
+    private val originalFoodName=listOf("Burger","Salad","Ice-Cream","Samosa","sandwich","momo","Shawarma","Pasta","Fries")
     private val originalmenuItemPrice=listOf("$5","$6","$7","$8","$9","$10","$7","$8","$9","$10")
     private val originalmenuImage=listOf(
-        R.drawable.menu1,
+        R.drawable.burger,
         R.drawable.menu2,
         R.drawable.menu3,
-        R.drawable.menu4,
+        R.drawable.samosa,
+        R.drawable.sandwich,
+        R.drawable.momo,
+        R.drawable.shawarma,
         R.drawable.menu5,
-        R.drawable.menu6,
-        R.drawable.menu3,
-        R.drawable.menu4,
-        R.drawable.menu5,
-        R.drawable.menu6
+        R.drawable.fries
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
