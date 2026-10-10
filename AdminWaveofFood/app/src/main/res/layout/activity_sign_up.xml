@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:text="Sipra Waves Of Food"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweathersans_bold"
+        android:text="SignUp Here For Your\n Admin Dahboard"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="26dp"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:text="Choose Your Location"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="20dp"
+        app:endIconDrawable="@drawable/arrow_down"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        app:boxStrokeWidth="0dp"
+        app:endIconTint="@color/black"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" >
+
+        <AutoCompleteTextView
+            android:id="@+id/listOfLocation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:fontFamily="@font/merriweathersans_regular"
+            android:inputType="none"
+            android:text="Choose Location" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="15dp"
+        android:elevation="2dp"
+        android:hint="Name Of Owner"
+        android:inputType="text"
+        android:outlineSpotShadowColor="@color/textColor"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <EditText
+        android:id="@+id/restorentName"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/home"
+        android:drawablePadding="15dp"
+        android:elevation="2dp"
+        android:hint="Name Of Restorent"
+        android:inputType="text"
+        android:outlineSpotShadowColor="@color/textColor"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/EmailOrPhone"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/mail"
+        android:drawablePadding="12dp"
+        android:hint="Enter Email or Phone number"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/restorentName"
+        app:layout_constraintStart_toStartOf="@+id/restorentName"
+        app:layout_constraintTop_toBottomOf="@+id/restorentName" />
+
+    <EditText
+        android:id="@+id/PasswordSignUp"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="12dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="12dp"
+        android:outlineSpotShadowColor="@color/textColor"
+        app:layout_constraintEnd_toEndOf="@+id/EmailOrPhone"
+        app:layout_constraintStart_toStartOf="@+id/EmailOrPhone"
+        app:layout_constraintTop_toBottomOf="@+id/EmailOrPhone" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/CreteAccountBtn"
+        android:layout_width="180dp"
+        android:layout_height="57dp"
+        android:background="@drawable/greenbuttongradient"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:outlineSpotShadowColor="@color/textColor"
+        android:text="Create Account"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/PasswordSignUp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/PasswordSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordSignUp" />
+
+    <TextView
+        android:id="@+id/AlreadyhaveAcountBtn"
+        android:layout_width="181dp"
+        android:layout_height="20dp"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:text="Already Have An  Account?"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/CreteAccountBtn"
+        app:layout_constraintStart_toStartOf="@+id/CreteAccountBtn"
+        app:layout_constraintTop_toBottomOf="@+id/CreteAccountBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:text="Design By \n Taha Sipra"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
